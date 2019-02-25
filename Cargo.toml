@@ -1,0 +1,11 @@
+[package]
+name = "tokio_mvce"
+version = "0.1.0"
+authors = ["Roshan Raghupathy <thisisroshansmail@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+futures = "0.1"
+tokio = "0.1"
+log = "0.4"
+env_logger = "0.6"
