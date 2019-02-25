@@ -39,6 +39,7 @@ fn main() {
                     .map_err(|_e| tokio::io::Error::new(tokio::io::ErrorKind::Other, "Poll error")))
                 {
                     Some((packet, to)) => {
+                        // This is printed
                         println!(
                             "Rx: Received {} bytes for {}: {:?}",
                             packet.len(),
@@ -46,6 +47,7 @@ fn main() {
                             packet.as_slice(),
                         );
                         try_ready!(sock.poll_send_to(packet.as_slice(), &to));
+                        // This is never printed
                         println!("Sent");
                     }
                     None => println!("Rx end"),
