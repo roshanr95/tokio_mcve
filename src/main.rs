@@ -8,12 +8,7 @@ use tokio::net::UdpSocket;
 use tokio::prelude::future::poll_fn;
 use tokio::prelude::Future;
 
-extern crate env_logger;
-extern crate log;
-
 fn main() {
-    env_logger::init();
-
     let mut sock = UdpSocket::bind(&SocketAddr::from_str("127.0.0.1:8000").expect("Parse error"))
         .expect("Bind error");
 
